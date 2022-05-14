@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,500;0,600;0,700;0,900;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@900&family=Roboto+Slab:wght@400;700&display=swap');
+
+@media all and (max-width: 850px) {
+	.no-mobile {
+		visibility: hidden;
+		display: none;
+	}
+}
+
+@media all and (min-width: 850px) {
+	.mobile {
+		visibility: hidden;
+		display: none;
+	}
+}
+
+
+/* COLOR THEMES AND COLOR ANIMATIONS */
+
+:root {
+	--background-color: white;
+	--h1-color: black;
+	--h2-h3-color: black;
+	--p-color: black;
+	--accent: #C7C2FF;
+  
+  --yellow-bg: rgb(255, 236, 130, 0.6);
+  --yellow-txt: #d49c2a;
+
+  --theme-toggle: #fffcd9;
+  --theme-toggle-bg: rgb(0,0,0,0.6);
+  --lilac: rgb(199, 194, 255, 0.34);
+  --gray: rgb(178, 178, 178, 0.26);
+
+  --light-accent-text: #7407FF;
+  --dark-accent-text:rgb(0, 0, 0, 0.64);
+  --podcast-title: #7407FF;
+  --podcast-bg: rgb(256, 256, 256, 0.6);
+  --overlay: rgb(256, 256, 256, 0.85);
+  --shadow: #e3e3e3;
+
+}
+
+[data-theme = "dark"] {
+  --background-color: #0D0D0D;
+	--h1-color: #fffffe;
+	--h2-h3-color: #fffffe;
+	--p-color: #faf2fc;
+	--accent: #411BAB;
+
+  --yellow-bg: #DBBFFF;
+  --yellow-txt: #411BAB;
+
+   --theme-toggle: #faf2fc;
+  --theme-toggle-bg: #5900ff;
+  --lilac: rgb(256, 256, 256, 0.21);
+  --gray: rgb(178, 178, 178, 0.13);
+
+  --light-accent-text: #DBBFFF;
+  --dark-accent-text: white;
+  --podcast-title: var(--h1-color);
+  --podcast-bg: rgb(178, 178, 178, 0.55);
+  --overlay: rgb(0,0,0,0.8);
+  --shadow: #000;
+
+
+}
+
+.lilac {
+	background: var(--lilac);
+}
+
+.gray {
+	background: var(--gray);
+}
+
+
+/* BASICS + TEXT */
+
+body {
+  background: var(--background-color);
+	margin-left: 20vw;
+	margin-right: 20vw;
+	justify-content: center;
+	align-content: center;
+}
+
+h1 {
+	font-family: 'Grandstander';
+	font-weight: 900;
+	/* letter-spacing: -1vmin; */
+	font-size: 12vmin;
+	color: var(--h1-color);
+	margin-bottom: -20px;
+	max-width: 90vw;
+}
+
+h2 {
+	font-family: 'Grandstander';
+	font-weight: 700;
+	font-size: 6vmin;
+	color: var(--h2-h3-color);
+	margin-bottom: -5px;
+	line-height: 60px;
+	max-width: 100%;
+}
+
+h3 {
+	font-family: 'Grandstander';
+	font-weight: 400;
+	font-size: 2.5vw;
+	color: var(--h2-h3-color);
+}
+
+p {
+	font-family: 'Roboto Slab';
+	color: var(--p-color);
+	font-size: 1vw;
+}
+
+
+/* HIGHLIGHTS, SELECTIONS, AND TEXT EMBELLISHMENTS  */
+
+::selection {
+	color: var(--yellow-txt);
+	background: var(--yellow-bg);
+}
+
+a:link {
+	color: var(--light-accent-text);
+}
+
+a:visited {
+	color: var(--accent);
+}
+
+mark {
+	display: inline-block;
+	line-height: 0em;
+	padding-bottom: 0.5em;
+	color: var(--h1-color);
+	background-color: var(--accent);
+	border-radius: 15px;
+}
+
+
+.strokeText {
+	color: white;
+	text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
+}
+
+.wiggle:hover {
+	animation: wiggle 0.5s;
+}
+
+.wiggle2:hover {
+	animation: wiggle0 0.5s;
+}
+
+
+/* BUTTON */
+
+button {
+	border-radius: 25px;
+	border-width: 0px;
+	font-size: 25px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background: var(--accent);
+}
+
+.contact:hover,
+button:hover {
+	cursor: pointer;
+	animation: boxJump 1s;
+}
+
+.theme {
+	position: absolute;
+	top: 10%;
+	right: 20%;
+}
+
+
+/* CONTAINERS  AND IMAGES */
+
+.box {
+	border-radius: 15px;
+	height: 30vh;
+	/* outline: rgb(0,0,0,0.25) solid 0.2vw; */
+	box-shadow: 0px 3px 3px var(--shadow);
+}
+
+.box:hover {
+	cursor: pointer;
+	animation: boxJump 0.6s;
+}
+
+.box-label {
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+	/*   background: rgb(228, 217, 255, 0.85); */
+	background: var(--overlay);
+}
+
+
+/* LINE */
+
+hr {
+	margin-top: 30px;
+	border: 1px solid var(--h1-color);
+}
+
+@keyframes wiggle {
+	50% {
+		transform: rotate(20deg)
+	}
+	75% {
+		transform: rotate(10deg)
+	}
+	100% {
+		transform: rotate(15deg)
+	}
+}
+
+@keyframes wiggle0 {
+	50% {
+		transform: rotate(-10deg)
+	}
+	75% {
+		transform: rotate(10deg)
+	}
+	100% {
+		transform: rotate(0deg)
+	}
+}
+
+@keyframes boxJump {
+	50% {
+		transform: scale(1.1)
+	}
+	100% {
+		transform: scale(1.00)
+	}
+}
